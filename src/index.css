@@ -1,0 +1,177 @@
+:root {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+
+  /* دعم الوضع الفاتح والداكن */
+  color-scheme: light dark;
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-dark: #242424;
+  --background-light: #ffffff;
+  --text-dark: #f8f9fa;
+  --text-light: #212529;
+
+  /* تعيين الألوان الافتراضية */
+  color: var(--text-dark);
+  background-color: var(--background-dark);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* الروابط */
+a {
+  font-weight: 600;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+a:hover {
+  color: #0056b3;
+}
+
+/* تحسين شكل الصفحة */
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+  padding: 20px;
+}
+
+/* الحاوية الرئيسية */
+.container {
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
+  background: var(--background-light);
+  color: var(--text-light);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* العناوين */
+h1 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+/* شريط التنقل */
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background: var(--primary-color);
+  border-radius: 8px;
+}
+
+.navbar a {
+  color: white;
+  padding: 10px 15px;
+  margin: 0 5px;
+  transition: background 0.3s;
+}
+
+.navbar a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* قائمة المهام */
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--background-light); /* تأكد أن الخلفية ليست بيضاء */
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  color: var(--text-light); /* تأكد من أن النص يظهر بوضوح */
+}
+
+.task-list li .task-text {
+  color: var(--text-light); /* ضبط لون النص */
+}
+
+/* نموذج إضافة المهام */
+.add-task-container {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.add-task-container input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-task-container button {
+  margin-left: 10px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.add-task-container button:hover {
+  background: #0056b3;
+}
+
+/* أزرار التعديل والحذف */
+.task-list li button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.task-list li button.edit {
+  background: #ffc107;
+}
+
+.task-list li button.delete {
+  background: #dc3545;
+  color: white;
+}
+
+.task-list li button:hover {
+  opacity: 0.8;
+}
+
+/* دعم الوضع الفاتح */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: var(--text-light);
+    background-color: var(--background-light);
+  }
+  body {
+    background-color: var(--background-light);
+    color: var(--text-light);
+  }
+  .container {
+    background: var(--background-dark);
+    color: var(--text-dark);
+  }
+}
